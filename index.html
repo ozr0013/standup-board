@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Post what you did yesterday, what you're doing today, and any blockers.">
+  <title>Standup Board</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <h1>Standup Board</h1>
+    <p class="tagline">Yesterday, today, blockers. Saved in your browser.</p>
+  </header>
+
+  <main>
+    <section class="composer" aria-labelledby="composer-title">
+      <h2 id="composer-title">Post your standup</h2>
+
+      <form id="post-form" autocomplete="on">
+        <div class="field">
+          <label for="name">Name</label>
+          <input id="name" name="name" type="text" required maxlength="60" placeholder="Your name">
+        </div>
+
+        <div class="field">
+          <label for="yesterday">Yesterday</label>
+          <input id="yesterday" name="yesterday" type="text" required placeholder="What you finished">
+        </div>
+
+        <div class="field">
+          <label for="today">Today</label>
+          <input id="today" name="today" type="text" required placeholder="What you're working on">
+        </div>
+
+        <div class="field">
+          <label for="blockers">Blockers</label>
+          <input id="blockers" name="blockers" type="text" placeholder="Anything in your way? (optional)">
+        </div>
+
+        <button type="submit">Post update</button>
+      </form>
+    </section>
+
+    <section class="board" aria-labelledby="posts-title">
+      <h2 id="posts-title">Today's standups</h2>
+      <section id="posts" aria-live="polite"></section>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>No backend. Posts live in this browser's localStorage.</p>
+  </footer>
+</body>
+</html>
